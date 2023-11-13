@@ -9,8 +9,11 @@ function clearDisplay() {
 }
 
 function calculate() {
-  let result = eval(display.value);
-  display.value = result;
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = 'Error';
+  }
 }
 
 function clearLastDigit() {
